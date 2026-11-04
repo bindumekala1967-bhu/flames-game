@@ -1,19 +1,9 @@
-# Python
 __pycache__/
 *.py[cod]
 .venv/
 venv/
-
-# Local databases
+node_modules/
+dist/
 *.db
-
-# Secrets
+*.sqlite3
 .env
-.env.*
-
-# Frontend dependencies and build output
-frontend/node_modules/
-frontend/dist/
-
-# Local environment files
-.DS_Store
