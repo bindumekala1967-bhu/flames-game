@@ -68,7 +68,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/flames",
+        "https://flames-game-api-gd33.onrender.com/api/flames",
         {
           method: "POST",
           headers: {
