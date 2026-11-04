@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: #fff4fa;
+  background:
+    radial-gradient(ellipse at 15% 10%, #51224d 0%, transparent 42%),
+    radial-gradient(ellipse at 85% 65%, #38265f 0%, transparent 45%),
+    linear-gradient(135deg, #160e25, #24102f 55%, #120e24);
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+.brand-icon {
+  color: #ff72b6;
+  margin-right: 10px;
+}
+
+.nav-label {
+  color: #d8bfd7;
+  font-size: 13px;
+}
+
+.hero {
+  width: min(100% - 32px, 620px);
+  margin: 40px auto 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid #714268;
+  border-radius: 30px;
+  color: #ffafd5;
+  background: #ffffff08;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 24px 0 14px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(40px, 8vw, 66px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: #ff91c5;
+}
+
+.subtitle {
+  color: #c9b5cf;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.game-card {
+  margin: 35px auto 0;
+  padding: 30px;
+  text-align: left;
+  border: 1px solid #ffffff20;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff12, #ffffff05);
+  box-shadow: 0 25px 80px #00000035;
+  backdrop-filter: blur(15px);
+}
+
+.card-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.sparkle {
+  display: block;
+  color: #ff91c5;
+  font-size: 26px;
+}
+
+.card-heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.card-heading p {
+  color: #c8b4cf;
+  font-size: 13px;
+}
+
+.game-card form label {
+  display: block;
+  margin-bottom: 9px;
+  color: #f3c2dd;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.game-card input {
+  display: block;
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid #ffffff25;
+  border-radius: 12px;
+  outline: none;
+  color: white;
+  background: #110d20a8;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.game-card input::placeholder {
+  color: #95849f;
+}
+
+.game-card input:focus {
+  border-color: #ff91c5;
+  box-shadow: 0 0 0 3px #ff91c520;
+}
+
+.heart-divider {
+  margin: 13px 0;
+  text-align: center;
+  color: #ff72b6;
+  font-size: 20px;
+}
+
+.calculate-button {
+  width: 100%;
+  margin-top: 23px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  border-radius: 12px;
+  color: #35132e;
+  background: linear-gradient(100deg, #ffb1d5, #ff72b6);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.calculate-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.calculate-button span {
+  font-size: 20px;
+}
+
+.error-message {
+  color: #ffb3b3;
+  font-size: 13px;
+  text-align: center;
+}
+
+.result-card {
+  margin-top: 25px;
+  padding: 24px 16px;
+  text-align: center;
+  border: 1px solid #ff91c555;
+  border-radius: 18px;
+  background: #ff91c50c;
+  animation: reveal 0.5s ease both;
+}
+
+.result-emoji {
+  font-size: 48px;
+  animation: pop 0.5s ease both;
+}
+
+.result-label {
+  margin: 12px 0 6px;
+  color: #ffafd5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.result-card h2 {
+  margin: 8px 0;
+  color: #ffafd5;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 36px;
+}
+
+.result-message {
+  color: #f5ddec;
+  font-size: 14px;
+}
+
+.disclaimer {
+  margin-top: 18px;
+  color: #b8a4c0;
+  font-size: 11px;
+}
+
+.reset-button {
+  display: block;
+  margin: 18px auto 0;
+  padding: 10px 16px;
+  border: 1px solid #ffffff25;
+  border-radius: 10px;
+  color: #f7dced;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background: #ffffff10;
+}
+
+.flames-legend {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 25px 0;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-item span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ffffff25;
+  border-radius: 50%;
+  color: #ffb1d5;
+  background: #ffffff08;
+  font-weight: 700;
+}
+
+.legend-item small {
+  color: #c9b5cf;
+  font-size: 10px;
+}
+
+footer {
+  padding: 10px 0 30px;
+  color: #a995b5;
+  font-size: 12px;
+}
+
+footer span {
+  color: #ff72b6;
+}
+
+.heart {
+  position: absolute;
+  color: #ff91c5;
+  opacity: 0.12;
+  pointer-events: none;
+  animation: float 7s ease-in-out infinite;
+}
+
+.heart-one {
+  top: 17%;
+  left: 8%;
+  font-size: 45px;
+}
+
+.heart-two {
+  top: 43%;
+  right: 8%;
+  font-size: 60px;
+  animation-delay: -2s;
+}
+
+.heart-three {
+  bottom: 10%;
+  left: 15%;
+  font-size: 30px;
+  animation-delay: -4s;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(8deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 20px 16px;
+  }
+
+  .nav-label {
+    font-size: 10px;
+  }
+
+  .hero {
+    margin-top: 25px;
+  }
+
+  .game-card {
+    padding: 22px 18px;
+  }
+
+  .card-heading h2 {
+    font-size: 21px;
+  }
+
+  .flames-legend {
+    gap: 3px;
+  }
+
+  .legend-item span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .legend-item small {
+    font-size: 9px;
+  }
+}
+
+.share-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffb2d8, #ff70b7);
+  color: #35132f;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 112, 183, 0.25);
+}
+
+.share-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+.history-card {
+  width: 100%;
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  box-sizing: border-box;
+}
+
+.history-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.history-heading h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.history-heading > span {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.history-details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.history-item p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.history-result {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.history-share-button {
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.history-share-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.clear-history-button {
+  margin-top: 16px;
+}
+
+@media (max-width: 480px) {
+  .history-card {
+    padding: 16px;
+  }
+
+  .history-item {
+    align-items: flex-start;
+  }
+
+  .history-heading h2 {
+    font-size: 17px;
+  }
+
+  .history-result {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

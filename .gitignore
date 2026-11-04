@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local databases
+*.db
+
+# Secrets
+.env
+.env.*
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+
+# Local environment files
+.DS_Store
